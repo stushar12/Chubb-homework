@@ -74,7 +74,8 @@ select * from courses;
 select * from mentors;
 
 
-#7) list the number of students that are assigned for a mentor
+#7) list the number of students that are assigned for a mentor 
+
 
 
 
