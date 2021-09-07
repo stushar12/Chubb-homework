@@ -44,8 +44,8 @@ INSERT INTO company_drives(student_id,no_of_companies) VALUES (1,4), (2,1),(3,5)
 select * from company_drives;
 
 # Table7
-CREATE TABLE mentors (student_id INTEGER, mentor_name TEXT);
-INSERT INTO mentors(student_id,mentor_name) VALUES (1,"Venkat Sir"), (2,"Abhinav Sir"),(3,"Venkat Sir"),(4,"Abhinav Sir"),(5,"Venkat Sir");
+CREATE TABLE mentors (mentor_id INTEGER, mentor_name TEXT);
+INSERT INTO mentors(mentor_id,mentor_name) VALUES (1,"Venkat Sir"), (2,"Abhinav Sir"),(3,"Rajiv Sir");
 select * from mentors;
 
 # Table8
@@ -89,7 +89,7 @@ select * from mentors;
 
 #7) list the number of students that are assigned for a mentor
 
-select mentor_name,count(*) as student_count from mentors join users on users.student_id=mentors.student_id group by mentor_name;
+select mentor_name,count(*) as student_count from mentors join users on users.mentor_id=mentors.mentor_id group by mentor_name;
 
 
 
