@@ -5,6 +5,7 @@ show databases;
 
 #1) Create tables for the above list given
 
+Done below
 
 #2) insert at least 5 rows of values in each table
 
@@ -62,11 +63,23 @@ select * from courses;
 
 #3) get number problems solved in codekata by combining the users
 
+select student_name,problem_solved from codekata join users on users.student_id=codekata.student_id;
+
 
 #4) display the no of company drives attended by a user
 
+select student_name,no_of_companies from users join company_drives on users.student_id=company_drives.student_id;
 
-#5) combine and display students_activated_courses and courses for a specific user groping them based on the course
+
+#5) combine and display students_activated_courses and courses for a specific user grouping them based on the course
+
+select courses.course_id,course_name,student_id from courses join students_activated_courses on 
+courses.course_id=students_activated_courses.course_id;
+
+
+select course_name,count(*) as course_count from courses join students_activated_courses on
+ courses.course_id=students_activated_courses.course_id group by course_name;
+
 
 
 #6) list all the mentors
@@ -74,8 +87,9 @@ select * from courses;
 select * from mentors;
 
 
-#7) list the number of students that are assigned for a mentor 
+#7) list the number of students that are assigned for a mentor
 
+select mentor_name,count(*) as student_count from mentors join users on users.student_id=mentors.student_id group by mentor_name;
 
 
 
