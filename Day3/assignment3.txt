@@ -215,7 +215,7 @@
 9)  db.howework.find({$and:[{"product_color":"indigo"},{"product_price":492.0}]}).pretty() 
 
 
-10) not taught yet
+10) db.howework.deleteMany({"product_price":47})
 
 
 
