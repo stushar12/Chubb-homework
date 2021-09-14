@@ -1,0 +1,32 @@
+Queries->
+
+1)
+
+select media from media where movie_name="3 Idiots";
+
+
+2)
+
+select movie_name,review from reviews where movie_name="3 Idiots";
+select movie_name,media from media where movie_name="3 Idiots";
+
+
+3)
+
+select artist.artist_name,roles.role_in_movie from roles join artist join movie on artist.artist_id=roles.artist_id 
+ and roles.movie_id=movie.movie_id where movie.movie_name="3 Idiots";
+
+
+4)
+
+select reviews.review from reviews join users on users.user_id =reviews.user_id where users.user_name="ram" ;
+
+
+5)
+
+select skills.skill_name from skills join artist on artist.artist_id=skills.artist_id where artist_name="Akshay Kumar";
+
+
+6)
+
+select roles.role_in_movie from roles join artist on artist.artist_id=roles.artist_id where artist_name="rajnikant";

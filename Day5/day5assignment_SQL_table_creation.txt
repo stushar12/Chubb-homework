@@ -1,0 +1,76 @@
+show databases;
+
+create database IMDB;
+
+use imdb;
+
+show tables;
+
+1)->
+create table movie (movie_id integer , movie_name text);
+
+insert into movie(movie_id,movie_name) value (1,"3 Idiots") ,(2,"Robot"),(3,"Karan Arjun"),(4,"Housefull");
+
+select * from movie;
+
+2)->
+create table media (movie_name text , media text);
+
+insert into media (movie_name,media) values ("3 Idiots", "video") ,("3 Idiots","songs"),("Karan Arjun","video"),("Robot","video"),("Housefull","video"),("Housefull","songs");
+
+select * from media;
+
+
+3)-> 
+create table genre (movie_id integer , genre text);
+
+insert into genre (movie_id,genre) values (1,"comedy") ,(1,"emotional"),(2,"sci-fi"),(2,"action"),(3,"action"),(3,"drama"),(4,"comedy");
+
+select * from genre;
+
+
+4)->
+create table artist (artist_id integer , artist_name text);
+
+insert into artist (artist_id,artist_name) values (1,"Aamir Khan") ,(2,"Sharman Joshi"),(3,"Kareena Kapoor"),(4,"Shah Rukh Khan"),(5,"Salman Khan"),(6,"Rajnikant"),(7,"Akshay Kumar"),(8,"John Abrahim");
+
+select * from artist;
+
+
+5)->
+create table artist_movie(artist_id integer , movie_name text);
+
+insert into artist_movie (artist_id,movie_name) values (1,"3 Idiots") ,(2,"3 Idiots"),(3,"3 Idiots"),(4,"Karan Arjun"),(5,"Karan Arjun"),(6,"Robot"),(7,"Housefull"),(8,"Housefull");
+
+select * from artist_movie;
+
+
+6)->
+create table skills(artist_id integer , skill_name text);
+
+insert into skills (artist_id,skill_name) values (1,"passionate") ,(1,"natural acting"),(2,"talented"),(3,"beautiful"),(4,"handsome"),(5,"talented"),(6,"3d actor"),(7,"hardworking"),(7,"real actions"),(8,"muscular");
+
+select * from skills;
+
+
+7)->
+create table roles(artist_id integer ,movie_id integer, role_in_movie text);
+
+insert into roles (artist_id,movie_id,role_in_movie) values (1,1,"Ranchor Das") ,(2,1,"Raju"),(3,1,"Priya"),(4,2,"Karan"),(5,2,"Arjun"),(6,3,"Chitti"),(7,4,"Sandy"),(8,4,"Max");
+
+select * from roles;
+
+8)->
+create table reviews(user_id integer ,movie_id integer, review text);
+
+insert into reviews (user_id,movie_name,review) values (1,"3 Idiots","Best comedy movie") ,(2,"3 Idiots","Family Movie"),(3,"Karan Arjun","One time watch"),(1,"Robot","Best action movie"),(3,"Robot","best"),(1,"Housefull","full comedy"),(2,"Housefull","fun");
+
+select * from reviews;
+
+
+9)->
+create table users(user_id integer , user_name text);
+
+insert into users (user_id,user_name) values (1,"ram") ,(2,"lakhan"),(3,"shyam");
+
+select * from users;

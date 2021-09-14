@@ -1,0 +1,60 @@
+NOSQL  Queries:
+
+1)
+db.movies.find({"name":"3 Idiots"},{media:1,_id:0}).pretty() 
+
+
+2)
+   db.movies.aggregate(
+   [    
+      {      
+         $lookup:        
+         {          
+            from: "reviews",
+            localField: "review.review_id",          
+            foreignField: "_id",          
+            as: "inventory_docs"        
+         }
+      },
+         { 
+            $project:{name:0,artist:0,genre:0,_id:0}
+         }
+
+      
+   ]).pretty()              
+
+
+3)
+
+db.movies.find({name:"3 Idiots"},{_id:0,media:0,genre:0,review:0,"artist.skills":0}).pretty()
+
+
+4)
+
+   db.users.aggregate(
+   [    
+      {      
+         $lookup:        
+         {          
+            from: "movies",
+            localField: "_id",          
+            foreignField: "review.user_id",          
+            as: "inventory_docs"        
+         }
+      },
+         
+      {$project: {"inventory_docs.media":0,"inventory_docs._id":0,"inventory_docs.media":0,"inventory_docs.genre":0,
+         "inventory_docs.review":0,"inventory_docs.artist":0}}
+      
+   ]).pretty()                     
+
+
+5)
+
+ db.movies.find({"artist.artist_name":"Aamir Khan"},{_id:0,"artist.skills":1}).pretty()   
+
+
+6)
+
+
+db.movies.find({"artist.artist_name":"Rajnikant"},{"artist.role":1,_id:0}).pretty()         
